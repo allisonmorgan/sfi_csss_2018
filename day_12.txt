@@ -1,0 +1,64 @@
+Day 12 - CSSS
+6/26/2018
+=============
+
+Redistricting II
+--------------------------------------------------
+
+
+Complexity Explorer
+--------------------------------------------------
+
+
+Behavior and social decision-making (blumsack@psu.edu)
+--------------------------------------------------
+* Overview: present challenges in (a) aligning individual behavior with sustainable energy, and in (b) governing sustainable power grids
+
+Individual behavior:
+
+- Contagion modesl work well for moding the spread of resistance of rooftop solar power, but not great for describing the propagation of disturbances on the physical network.
+
+"Energy efficiency paradox": people systematically leave money on the table by failing to take actions where the benefits outweigh the costs.
+
+Example: Comparison of energy usage to neighbors & frowny versus smiley faces on energy bills
+	- Would it be effective to give everyone frowny faces? Would it be ethical?
+
+"Framing gains and losses" with respect to incentivizing sustainable energy use.
+
+Example: Randomized control trial (opt-in) where users were randomly assigned a rebate "carrot" or a high price "stick" treatments (equal in magnitude) to encourage energy conservation.
+	- Result: 
+		* Larger reduction among those in the high price "stick" treatment versus those who were given a rebate.
+		* What do people value? Monetary savings, but equally improvement in service.
+		* But also, why do we care about the carrot or the stick when the gain or loss is roughly a handful of pennies?
+
+Organizational behavior:
+
+RTOs - Regional transmission operations - are responsible for grid reliability but own no physical assets.
+	* Rely on markey mechanisms, where rules for markets and planning are devised via a highly stakeholder-driven process.
+	* Not for profit, but regulated at the federal level.
+	* Decisions made over second to minute time scales - "high reliability operation" (HRO)
+	* "Boundary" decisions occur over the longer time scales.
+
+Science of complex power grids: transdisciplinary needs + creative thinking + not just the grid
+
+Notes: 
+http://www.oracle.com/us/industries/utilities/social-norms-energy-conservation-3631977.pdf
+https://scholar.harvard.edu/files/todd_rogers/files/allcott_rogers.aer_.2014.pdf
+
+Networks & Hierarchies II (http://danlarremore.com/pdf/csss_2018_ranking.pdf)
+--------------------------------------------------
+"What if we wrote down model whose non-uniformity over its ensemble was a feature?""
+
+Generate the structure you wish to infer.
+	Generative model (GM) + parameters -- stochastic draw --> data
+
+Stochastic block model is running the generative process in reverse (inference)
+	Generative model (GM) + parameters <----- inference ----- data
+
+Institutional prestige: rank as revealed by institutional hiring decisions
+
+
+
+
+
+

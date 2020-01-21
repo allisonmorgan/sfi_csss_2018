@@ -1,0 +1,90 @@
+Day 11 - CSSS
+6/25/2018
+=============
+
+Networks & Hierarchies
+--------------------------------------------------
+"Structure is what makes data different from noise. It's what makes a network different from a random graph."
+
+Treat the network like a system: (a) extrapolation, (b) interpolation, (c) generalization
+				... an artifact: (a) mechanisms, (b) explanations
+... intermediate data structure: (a) useful division, (b) simplification
+
+* (Intuition: think of regression or community detection) *
+
+Principles of rankings: with assumptions
+	(i) instrinsic quality. (ii) interactions reveal differences. (iii) pair-wise
+
+Dominance: social, mental, physical, financial, endorsement
+
+Ranking algorithm ("win-loss"): use MCMC
+	(i) order nodes randomly, 
+	(ii) compute the number of violations, 
+	
+	(iii) pick two nodes at random and swap, ## repeat till
+	(iv) compute the number of violations, 
+
+	(v) if violations decreases or stays the same, keep the swap. otherwise, reject
+
+Bradley-Terry-Luce: P(A > B) = pi_{A} / (pi_{A} + pi_{B}) = 1 / (1 + exp(-(mu_{A} - mu_{B})/s)
+
+SpringRank: H(s) = (1 / 2)*sum_{i, j}^{N} A_{i, j}*(s_{i} - s_{j} - 1)^{2}
+	* Given edge existence, predict edge direction. P_{i, j} = 1 / (1 + exp(-2 * beta * (s_{i} - s_{j}))
+	* Use cross-validation.
+
+Random graph models:
+	* a generative model is just a recipe: choose parameters -> make the network
+	* a stochastic generative model is also just a recipe: choose parameters -> draw a network
+
+Configuration model: generating graphs via stub matching. Sampling the graphs under stub-labeled, vertex-labeled, and graph isomorphisms will yield different hypothesis tests
+
+How much of [cool property] that we observe is actually just typical of networks from [particular ensemble]?
+	- Null hypothesis: none.
+	- Test requires uniform distribution.
+
+
+Propagation, failures and blackouts in energy systems
+--------------------------------------------------
+Overview: Define "the grid" and why its complex, why theory has not been helpful, why we should start over completely(!)
+
+Challenges for power grids and complexity: 
+	(1) We can't agree on the "structure" of power grids (e.g. degree distribution, clustering, etc.), 
+	(2) though we probably don't care, because the propagation of disturbances in the power grid is unlike diseases, and 
+	(3) electrons are highly social creatures
+
+Understanding interactions between the environment and the power grid are not well understood. (We do know the physics of generation and transmission, and that they mostly work.)
+
+Principles:
+	(1) "What goes in must come out (there is no storage)"
+	(2) "If what goes out is not equal to what goes in generators speed up / down" (or else, dynamic instability occurs)
+
+Controlling the power grid takes place over a wide range of time scales: 1/10 of a second to months and years
+
+The grid: network of expensive coupled pendula, which have a tendency to produce long chains of cascading failures, and which we add millions of new stochastic sources.
+
+"Smart Grid": composed of sensor networks, automated controls, and digital meters
+
+Most blackouts follow power law distributions, and the frequency of large blackouts is not decreasing. But we don't really know the structure of the power grid, the relationship between oscillations and instability, and the nature of propagation.
+
+Rethinking propagation and connectivity: Forget about network structure. Suppose that there were a network structure under which disturbances would propagate in a way that we think we understand.
+
+
+Redistricting I
+--------------------------------------------------
+* Redistricting determines power - the re-arrangement of voters determines the election of representatives.
+
+* "Gerrymandering" proceeds largely unimpeded by legal constraints. 
+
+* U.S. elections are largely non-competitive. Representatives are generally re-elected, despite decreasing congressional approval.
+
+* Graph partitioning problem (NP-hard) - subsetting N census tracts into k districts.
+
+* Partisan gerrymander: "partisan information may be used in the construction of a map, but it may not be used 'excessively'" (with respect to racial, political, etc. demographics)
+	- But what does "excessively" mean? It's a relative claim - relative to other possible maps.
+	- How does "unfairness" compare to the other maps that could be drawn?
+
+* Sequential evolutionary algorithm: start from random points and draw boundaries to reach legal maps (http://cho.pol.illinois.edu/wendy/papers/swevo.pdf)
+
+
+
+

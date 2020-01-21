@@ -1,0 +1,74 @@
+Day 14 - CSSS
+6/28/2018
+=============
+
+Modeling Past Human Societies
+--------------------------------------------------
+Why model? "Wind back the tape of lide to the early days of the Burgess Shale; let it play back ... " (Gould)
+
+Mesa Verde settlement: Still not well understood why they left? Can we answer this question by understanding how the settlement developed?
+
+Hypothesis: Growth of the Chacoan regional system signifies a political hierarchy in the American Southwest.
+
+Use agent-based model of (i) environment, (ii) households / people, and (iii) hierarchy.
+	Consider: https://en.wikipedia.org/wiki/Lanchester%27s_laws
+
+Theory: Tribute flow leads to power. Power leads to hierarchy.
+
+
+The Neolithic agricultural revolution and the origin of private property: how technologies and institutions co-evolve
+--------------------------------------------------
+Technology and institutions as influences on social dynamics, though they are not mutuall exclusive.
+
+Echoes of this institutions versus technology debate in recent works on growth and stagnation.
+
+Technology and institutions: 
+	* Exogenous shocks: 
+		- Changes to the forces of production -> change social relations of production (Marx)
+		- As a driver of institutional innovation (particularly climate change)
+
+Climate changed more favorably, and brought about farming. Though farming is not more efficient / nutrious than foraging. Why did it emerge?
+	- Was not due to population pressure, or for "mandatory" reasons.
+	- Because of military and demographic advantages in faming populations?
+
+Institutional barriers to technical change: in farming, barriers in (a) storage, and the (b) obligation to share excess food.
+
+"For farming to be individually advantageous one had to be able to exclude others from the fruits of ones labor so property rights were required; but ... ownership of dispersed and mobile wild species was difficult to delimit and defend ... " (needed the idea of private property)
+
+	* "Coevolutionary process", not exogenous drivers of history, modeled via a stochastic Markov process with multiple stationary states. Coevolution of technology and institutions.
+
+Perhaps, the reductionof climatic volatility allowed a more sedentary livelihood and contributed to conditions for an evolution of private property.
+
+Puzzle restated: "A land-saving labor intensive technology (farming) proliferated in a land-abundant economy"
+
+Approach: model needs to represent a substantially un-coordinated process (evolutionary game theory in large populations, not classical game theory with a few hypothetical "collective" actors)
+	Need "strategic complementaritues" (positive feedback) to have multiple stationary states
+
+	Civic & Bourgeois (Dove & Hawk): 
+		Civic: collective action based on reputation not possession, vulnerable to losses
+		Bourgeois: actions based on possession
+
+		"Two basins of attraction" depending on initial conditions (too many civics or too many bourgeois)
+
+	Two technologies: (Civic) foraging and (Bourgeois) farming.
+		Consider the payoff advantage of the bourgeois, as a function of the fraction of bourgeois
+
+	Transitions between farming and foraging should be rare under the model, and they are!
+
+Take home message: not labor productivity that accounts for farming, but its instead the adoption of private property
+
+
+Machine Learning II
+--------------------------------------------------
+
+
+Networks & Animal Societies II
+--------------------------------------------------
+* When does structured conflict emerge?
+* How do strategies change when information type or amount changes?
+* Can people synthesis and use information that is not directly provided?
+
+
+
+
+

@@ -1,0 +1,11 @@
+Day 7 - CSSS
+6/19/2018
+=============
+
+...
+
+Network Analysis II
+--------------------------------------------------
+* Threshold models: think neural networks and activation function which aggregates the responses of a node's neighbors
+
+...

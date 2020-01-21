@@ -1,0 +1,26 @@
+Day 5 - CSSS
+6/15/2018
+=============
+
+Cultural Evolution & Institutions
+--------------------------------------------------
+Accept versus reject: 
+	* ... if a single experiment rejects the hypothesis, we universally reject the hypothesis (Popper)
+	* ... instead consider a cummulative sum of accept / reject decisions (Laketos)
+	* ... instead consider rejections to extrapolate further, such that accepting the hypothesis is increasingly harder (Kuhn)
+
+Charles Darwin: "Origin of the Species", "Structure and Distribution of Coral Reefs", and "The Formation of Vegetable Mould, through the Action of Worms with Observation of their Habits"
+	- Development of niche spaces as the rules and strategies are changing
+
+Douglas North: "individuals' interpretation of their environment will reflect the learning that they have undergone. ... information feedback from their choices is not sufficient to lead to the convergence of competing interpretations of reality" (1994; on institutional norms)
+		* individual behavior * <--------------> * institutional stability * (continuum)
+
+Model these changes in instituional norms as a function of (a) SIR epidemics (fast), (b) neural networks (slow), (c) Hebbian/Continuum models of competition (intermediate; e.g. preferential attachment).
+
+Institutional memory - persistences arises from institutional feedback in bistable regimes (losing a habit is harder than acquiring it; systemic endowment effect)
+
+Evolution of constitutions:
+	- Comparative constitution project (data set) using topic modeling and PCA on text, but requires human interpretation to decipher the topics generated
+	- Diffusion network, constructing a phylogeny from the transmission of topics among constitutions
+	- Measures of invention / innovations can be constructed as a function of the number of introduced, and relied upon, and the time of a construction's introduction
+	- Yule process: P'_{n}(t) = -n * lambda * P_{n}(t) + (n - 1) * lambda * P_{n-1}(t)

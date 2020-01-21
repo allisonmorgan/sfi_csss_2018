@@ -1,0 +1,89 @@
+Day 8 - CSSS
+6/20/2018
+=============
+
+Innovations in Biological Evolution I
+--------------------------------------------------
+Timeline:
+	Charles Darwin: admits that it is unknown the details of (a) inheritance, (b) variation
+	Robert Mendel: investigates inheritance
+	Hugo de Vries: "cannot explain the arrival of the fittest"
+	Wilhelm Johannsen: coins "gene", "genotype", and "phenotype"
+	"Modern synthesis": population genetics
+		(1) phenotypes often represented as scalar value (fitness),
+		(2) simple relationship between genotype and phenotype
+	"Molecular era": discovery of DNA and its function
+	"Neutralism & selectionism": 
+		* Part of a broader debate about "adaptationism".
+	Present - "Population genomics" = modern synthesis + genome sequencing
+
+"How does nature bring forth the new - evolutionary adaptaion and innovations?"
+
+Most or all complex / innovations involve: (1) metabolism, (2) regulation, (3) macromolecules, or (entangled) combinations thereof.
+
+* Principles of innovation should explain how biological systems can preserve existing well adapted phenotypes while exploring many novel phenotypes, ... among other things.
+
+Genotype <--> Phenotype
+	Metabolic genotypes are neighbors if they differ in a single reaction. A neighborhood consists of all those neighbors.
+
+
+Stochastic Biological Systems
+--------------------------------------------------
+BIRTH:	gene --[k_{b}]--> gene products (mRNa, protein) 
+DEATH:  gene products (mRNa, protein) --[are degraded / k_{d}]--> 0 (thrown away)
+
+DETERMINISTIC picture: where x = copy # of x in a give ensemble measure
+	d[x(t)] / dt = k_{0} - k_{d} * [x(t)]
+	x(t) = (k_{b} / k_{d}) [1 - e^{-k_{d} * t}]		{ for x_{0} = 0, tau = (1 / k_{d}) }
+
+	p(x, t) 										{ for small x }
+		(x, t + d_{t}) -> (x + 1, t) through BIRTH
+		(x - 1, t) -> (x, t + d_{t}) through DEATH
+
+	p(x, t + d_{t}) = k_{b} * d_{t} * p(x - 1, t) 							## prob. that birth occurs
+						+ k_{d} * d_{t} * (x + 1) * p(x + 1, t)				## prob. that death occurs
+						+ (1 - k_{b} * d_{t} - k_{d} * d_{t} * x) * p(x, t) ## prob. that birth / nor death occurs
+
+	lim_{d_{t} -> 0} [(p(x, t + d_{t}) - p(x, t)) / d_{t}]
+	 = dp(x, t) / dt
+	 = k_{b} * [p(x - 1, t) - p(x, t)] + k_{d} * [(x + 1) * p(x + 1, t) - x * p(x, t)]
+
+	PROPENSITIES / CHANGE OF VARIABLES: x -> z, p(x, t) -> g(z, t)			## probability generating function
+		g(z, t) = sum_{x from 0 to infinity} z^{x} * p(x, t)
+				= p(0, t) + z * p(1, t) + z^{2} * p(2, t) ... 
+			* noticing the relationship between Taylor series *
+
+	EXAMPLE: g(z, t) = e^{lambda * (z - 1)}, find p(x, t)
+		dg / dz = lambda * g(z, t)
+		d^{2}g / dz^{2} = lambda^{2} * g(z, t) ...
+
+		p(x, t) = (1 / n!) * d^{n} g / dz^{n}  								## evaluated at z = 0
+				= (n / n!) * lambda^{n} * e^{-lambda * t}
+
+	Given g(z, t) = sum_{x}^{infinity} z^{x} * p(x, t) (i)
+	< x_{n} > = sum_{x}^{inifinity} x * p(x, t)		   (ii)
+
+	to get from (i) to (ii) evaluate the partial derivative of (i) at z = 1
+
+	HOMEWORK QUESTIONS:
+	* Show that the mean = variance for the Poission distribution.
+	* Convert the ME (k_{b} * [p(x - 1, t) - p(x, t)]) into a ME for the GF.
+	* What can you say abotu the steady-state?
+
+
+Community Detection on Networks I
+--------------------------------------------------
+Generative models: 
+	(a) latent variables behind each node, that control how this interacts with others, i.e. how the network is generatived
+	(b) depending on the specific application: change/inform with domain knowledges the details of the model (e.g. dot product)
+
+Multilayer networks:
+	* Naive approaches: (1) solve separate community detection for each layer, (2) aggregate all the layers into a single network (typically via sum or product)
+
+	* More complex approaches: (a) modularity maximization, (b) generative, (c) spectral
+
+	- Instead of maxtrix multiplication, consider tensor multiplication with a transition matrix w_{kq}^{a} where a is layer specific, k and q captures assortative / disassortative structures. (Where W is a k by k dimension matrix, for k communities.)
+		* Latent variables can be shared across layers, depending on the specific application you may change the prior distribution based on domain knowledge
+
+
+									  

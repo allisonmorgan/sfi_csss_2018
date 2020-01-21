@@ -1,0 +1,28 @@
+Day 15 - CSSS
+6/29/2018
+=============
+
+Agent-based modeling for public health
+--------------------------------------------------
+To uncover complex "etiology", learn from past policy/interventions, to aid deisgn of new policies/interventions via computational laboratory
+
+Artifical society of individuals ("agents"), at any (or multiple) levels of aggregation, where stochastic simulation generates social patterns ("from the bootom up")
+
+"Proposing new interventions ... "
+Example #1: Smallpox vaccination across two towns
+	* Policy interventions - trace vaccination, mass vaccination, hybrid strategies?
+		-> Result: pre-emptive vaccination of hospital workers and family members who have sick family
+	- Applications to H1N1, etc.
+
+Example #2: Studying place-based tobacco policy options
+	* Particular interest in POS interventions (e.g. retailer density and cost)
+		-> Result: ...
+
+" ... retrospectively looking at interventions that don't work ... "
+Example #3: Studying "whole of community" obesity prevention interventions
+	* Three pillars: (1) focus on community level for effective change, (2) tailoring of evidence based general approach to high precision medicine, (3) complex systems modeling
+		-> Result: ... 
+
+" ... and to uncover the causes of an disease."
+Example #4: Peer influence - "follow the average" - with respect to body weight
+		-> Result: Model shows why and how early exposure can strongly shape reward learning and preference in ways that continue to shape behavior despite later changes in environment

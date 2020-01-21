@@ -1,0 +1,54 @@
+Day 4 - CSSS
+6/14/2018
+=============
+
+Computation I/II: Algorithms & Landscapes
+--------------------------------------------------
+* "Systems aren't simple or complex; questions about them are."
+* "Intrinsic complexity of a problem: the running time (or memory use, or other resource) of the best possible algorithm"
+
+- Duality
+- Types of algorithms: dynamic programming, greedy algorithm, linear programming
+
+* Complexity classes: NP (superset of; we can check a solution easily) > P (we can find a solution easily)
+
+* NP-completeness: Any problem in NP, can be re-written as another problem in NP
+	- e.g. Boolean circuits -> 3 SAT -> Graph coloring
+									 -> Max cut
+							-> Tiling
+	- Related to a worst-case notion (relevant to cryptography)
+
+"From theory to real world": optimization of a very hard problem can be perturbed to solve an approximation to the problem
+	- Problems and algorithms co-evolve naturally (protein folding)
+
+
+Phase Transitions
+--------------------------------------------------
+* Statistical inference <=> statistical physics
+	- How can we find patterns in noisy data? Phase transitions. Information vs. computation.
+		- e.g. magnetic fields in the environment of heat (temperature decreases conductivity and increases noise); 
+		- e.g. community detection with noisy data ("ground states vs. the landscape", we need to understand the entire landscape)
+
+* Overfitting: we and our algorithms (community detection) are prone to false positives.
+	- Fancy models can nicely explain variance, but is biased (less generalizable)
+	- Understanding that the landscape is rocky and not simply convex
+
+Stochastic block model: nodes have discrete labels -- k groups or types of nodes -- generating a k x k matrix of connection probabilities
+	- Analogy: phase transition between the connectivity and community structure of a network as a function of the energy / temperature
+
+Belief propagation: probabilistic model explaining message passing: k -> i -> j, where i = p(message | k) and j = p(message | j)
+	- Overfitting here could involve fitting each node to its own group, but will not generalizability
+	- Uses assumption that network is tree-like, with independence between the inputs
+
+- Phase transition from detectable to undetectable transitions. Above the detectability threshold, there exist efficient algorithms for community detetection.
+
+- Belief propogation for community detetction can fall into a trivial fixed point for almost all initial conditions. (Analogy between spin glass, lowest energy state but unstable -- small basin of attractor.)
+
+- Ideal: "as simple as possible, but no simpler". Everything is a steam engine, computer, economy, ecology, network, etc. Analogies for helping us understand the world better.
+
+
+Adaptation, Inference & Representation
+--------------------------------------------------
+
+...
+

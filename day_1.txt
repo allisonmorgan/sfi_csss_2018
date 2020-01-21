@@ -1,0 +1,65 @@
+Day 1 - CSSS
+6/11/2018
+=============
+
+Projects:
+--------------------------------------------------
+- Groups of 3-6, join 1-2 projects
+- Presentation + paper
+
+
+Complex Systems:
+--------------------------------------------------
+- Characteristics: 1) emergence, 2) interations, 3) order & disorder, 4) heterogeneous, 5) adaptive / dynamic
+- How does cooperation occur? How does complexity occur?
+- Are there cultural practices and norms common across complex systems scientists?
+
+
+Project Thoughts:
+--------------------------------------------------
+- Women in science: interview audit study, interruptions among SFI lectures
+- Xindi: predicting / quantifying the success of books
+- Convergent cross mapping
+
+
+Introduction to Nonlinear Dynamics:
+--------------------------------------------------
+- Examples: double pendulum, eddy both have sensitive dependence on initial conditions
+- Chaos: complex behavior arising in a deterministic nonlinear dynamic system, which exhibits two special properties: sensitive dependence and characteristic structure
+		Dynamical > Nonlinear > Chaotic
+- Nonlinear dynamics: flows, driven nonlinear oscillators (pendula, hearts, firefly), classical mechanics, protein folding, population biology
+- Chaotic systems have no closed form / analytical solutions for systems defined by ODEs.
+	Necessary: nonlinear, & more than three state-space dimensions
+	+ Sufficient: cannot be solved in closed form
+
+- State space: e.g. double pendulum can be defined by theta_1, theta_2, omega_1, omega_2
+- Fixed point: stable (perturbations shrink) and unstable (perturbations grow) where a system stays / tends towards
+- Attractor: set of state space points to which trajectories relax / asymptotically approach
+	Basins of attractors, boundary of basin of attractor, and the attractor
+	Four types: (1) fixed points, (2) limit cycle (periodic), (3) quasiperiodic orbit, (4) chaotic / strange attractor (often fractal, but not always; covered densely by trajectories; exponential divergence of neighboring trajectories - SDOIC)
+- Transient behavior tends towards attractor (think effects of friction)
+
+- Bifurcation: qualitative change in the dynamics - topological change in the attractor - caused by changes in parameters
+- Changes in the location of attractors is a _geometric_ change
+
+- Exponential divergence - distance between two forward images of two nearby points - grows as e^(lambda*t) as t -> infinity, where lambda is the Lyapunov exponent
+
+- If the first Lyapunov exponent is positive, that is a "signature of chaos".
+- Lyapunov exponents define the directions along stable and unstable manifold which direction tends
+	Stable manifold: direction on the manifold shrink towards a point --->-----<---
+	Unstable manifold: direction on manifold diverges 				  ---<----->---
+
+
+Navigating the Summer School
+--------------------------------------------------
+Security: (505) 577-1660
+SFI Library: http://santafeinstitute.worldcat.org/
+
+
+Projects
+--------------------------------------------------
+Paper due end of summer school (300 word abstract)
+Final paper due in November
+
+
+

@@ -1,0 +1,99 @@
+Day 3 - CSSS
+6/13/2018
+=============
+
+Scaling Crash Course
+--------------------------------------------------
+Fractals: self-similar geometric objects across scale, "scale-free" (hard to make sense of size)
+
+Self-similarity dimension: similar to Hoffdorf dimension, box counting dimension
+	- number of small copies = (magnification factor) ^ D, where D = log(3) / log(2) for 3 small copies under a magnification factor of 2
+
+* Real fractals cannot be self-similar forever. How wide a range of self-similarity needed to be a fractal?
+	- "Fractal-ness" is a notion, not a strict category
+
+Where do fractals come from?
+	* Deterministic and stochastic iterated processes can make fractals
+	* Fractals look complex, but can be simple to build
+	* "Generic" shapes, in that there are many fairly simple ways to make them
+
+Power laws:
+	- Example: word frequencies
+		* Probability of a word appearing x times: p(x) = A * x^{-alpha}, which on a log-log plot is linear with slope of alpha
+	- Long tails -- power laws decay much more slowly than exponentials. Very large x values, while rare, are still observed.
+	- Power laws are scale free (self-similar): they look the same at all scales, unlike exponential distributions.
+		* Ratio of p(x) / p(2 * x) is constant and not a function of x for power law distributions.
+	- The only distribution that is scale free
+
+Cumulative distribution function (CDF): P(x) = fraction of data that has value of x or greater, with same interpretation for continuous and discrete distributions. If the distribution follows a power law, the CDF follows a power law.
+	- Also called a rank frequency plot: sort data and plot it against its rank
+
+Estimating alpha: instead of fitting a line using least squares where R^2 value does not capture the distribution of errors correctly, use a maximum likelihood estimator (MLE)
+	* Choosing alpha which maximizes L(x, alphe) = p(x | alpha) = p(x_{1} | alpha) * p(x_{2} | alpha) ... * p(x_{n} | alpha)
+
+Comparing power law distributions among alternatives: find the optimal parameters and alternative distributions, and consider a p value or log likelihood between the power law and alternatives
+
+Generating processes: (1) preferential attachment, (2) exponential growth, (3) multiplicative processes with lower threshold, (4) optimization, and (5) phase transitions
+
+Are power laws interesting? Do you need to establish that something is a power law?
+	- Long tails: "strong implications for how one thinks about risk, outliers, extreme events, etc."
+	- Simple mechanism: power laws may suggest a simple mechanism, but it says nothing about the nature of that mechanism
+	- Scale may not matter: power laws are a way to look for a particular type of pattern, which tells us that there are similarities across scales
+
+
+Game Theory II
+--------------------------------------------------
+"Two Models of Procedural Rationality"
+
+Sampling equilibrium: consider symmetric two player games with m pure strategies. 
+	- Let p = (p_{1}, p_{2}, ..., p_{m}) denote an arbitrary mixed strategy across population. 
+	- Suppose each action is sampled once against p. 
+	- Let w_{i}(p) denote the probability that action i results in the highest payoff.
+
+
+Strict nash equilibirum (e.g. public goods game) -> sampling equilibrium
+	There exists two sampling equilibria: p* = (0, 0, 1) or p* = (0.2, 0.28, 0.52)
+
+Stability: a stable sampleing equilibrium is a stable rest point of the dynamics: 
+	dp_{i} / dt > 0 if and only if w_{i}(p) > p_{i} at a given point in time, for continuous distribution of p
+
+Which of the sampling equilibria are stable? The mixed strategy approaches a stable fixed point, unlike the pure strategy(!)
+
+Nash equilibrium works well in some cases, but poorly in others. Level-k strategies work well in some cases, but poortly in others. (No free lunch theorem?)  
+
+
+How religious belief, practice, and identity interact with and shape interpersonal relationships II
+--------------------------------------------------
+
+
+Nonlinear Dynamics III (Chaos & Control)
+--------------------------------------------------
+* Denseness & reachability in a real engineering applications
+* Creative uses of stable / unstable manifolds (noise reduction, the intersections of manifolds)
+
+
+Time-series Analysis
+--------------------------------------------------
+Nonlinear dynamics in the wild: no generating equations of motion.
+
+Delay-coordinate embedding: 
+	- Topological data analysis
+	- Josh is anti - "convergent cross-mapping"
+
+Takens theorem: for the right delay tau and enough dimension m, and for infinitely long and noise-free time series data, the embedded dynamics are diffeomorphic to have the same topology (though not necessarily geometrically) as the original state-space dynamics.
+
+* Observation function: needs to be a smooth function of the unknown state space variables. \hat{x} = h(\vec{x})
+
+* Time delay (tau): how far apart the teeth in the comb are. Needs to be positive, but not well theorectically defined.
+	- Each delay coordinate should tell you something new, but relevant.
+	- Seek time delay which results in independent coordinates.
+	- Consider auto-correlations, but they are non-linear, so avoid this. Consider instead the mutual independence. 
+	- Seek tau coordinate which minimize mutual information.
+
+* Embedding dimension (m): needs to be greater than 2*d_{cap} (twice the fractal dimension of the system).
+	- Look for crossings in projection to determine whether the number of dimensions is sufficients.
+	- Need a lot of data! 7^{m} or 10^{m}
+	- Method of false neighbors: Look at neighbors in low dimensional space, and see how neighbors change when you increase the embedding dimension.
+	- Choose embedding dimension such that the percent of false nearest neighbors is less than some threshold. Or consider other dynamical variants and watch how they change with embedding dimension.
+
+Fractal dimension: e.g. the Cantor set / dust has fractal dimension < 1

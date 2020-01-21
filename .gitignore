@@ -1,0 +1,6 @@
+*.py
+*.pdf
+.DS_Store
+all_data/
+projects/
+readings/

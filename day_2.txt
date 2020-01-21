@@ -1,0 +1,141 @@
+Day 2 - CSSS
+6/12/2018
+=============
+
+Complexity and Human Societies:
+--------------------------------------------------
+How can we explain human-typical social organization, and variation across time?
+(In other words how can we explain cooperation and homophily?)
+
+Concepts / elements:
+- Food, ecology of food, food culture
+- (Space, time, societal) scale and interactions within and between groups
+- Equity / retaliation 
+- Narratives
+- Sociality and communication
+- Cognitive constraints
+- Hierarchy
+- Survival / constraints on resources
+- Rituals
+- Dynamics / cycles
+- Basis for trust / cooperation / altruism
+- Climate and geography (ecology, technology)
+- Development and transmission of culture
+- Uncertainty / risk / regulation
+
+Tools:
+- Agent based models and evolutionary models, in consideration with the landscape of parameters and options
+- Network science
+
+Topics:
+	- Demography & sociality
+	- Evolution of cooperation networks
+   -> Organization for collective action
+	- Territoriality
+
+Organization for collective action:
+- Transitions in equilibrium organization with variating in the (benefits of collective action) and the (number of community members)
+- Mediated by (?) replicator dynamics: the frequency f_{t+1} = f_{t}*\frac{W_{i}}{\hat{W}} where W_i is the reward for a particualr strategy, and \hat{W} is the average strategy
+- Phase transitions between 
+	* no cooperation, 
+	* free cooperation, 
+	* cooperation supported by mutual monitoring (norms developed interpersonally), 
+	* cooperation supported by leadership (norms developed via taxes), and 
+	* cooperation supported by multi-tiered hierarchy -- listed in order of increasing the number of community members.
+
+
+Game Theory I:
+--------------------------------------------------
+Overview
+	* Foundations of game theory: players, strategies, and payoffs
+	* Examples & experiements
+	* Procedural rationality: level k thinking, sampling dynamics
+	* Agent based models
+
+Game: 
+	defined by a set of players {1, ..., n} where for each player i, 
+	there is a set of strategies S_{i}, 
+	with a payoff function u : S_{1} x ... x S_{n} -> R^{n}
+
+Pure strategies involve a complete plan on contigent actions. Mixed strategies involve a multiple types of strategies (randomizations over the set of pure strategies)
+
+Nash equilibrium: a set of strategies, where no player can improve their payoff with a unilateral change of strategy. No body wants to switch their strategy, upon hearing others strategy.
+
+Nash's existence theorem: does every game have an equilibirum? If S_{i} is a compact and convex subset of Euclidian spcae, and u is a continuous functionm then an equalibrium exists.
+
+Mixed strategy equilibria with which choices are chosen with probabilities to find Nash equilibrium.
+
+See Lecture 06-2 "Closed Graphs and Fixed Points of Correspondences" covers Nash (1950) PNAS paper.
+
+Two Models of Procedural Rationality:
+	* Level-k Reasoning: 
+		- Level-0 players choose uniformly at random
+		- Level-1 players assume others are choosing uniformly at random (e.g. distribution will center at 50, half that is 25, so one should choose 25)
+		...
+		- Level-k players choose based on belief that others are level (k-1)
+		- Distribution of types impleies distribution of strategies
+
+Example: Level-k reasoning on the public goods game. Level-0 choose randomly, Level-1 choose low, ... Level-k choose low. Model predicts distribution strongly peaked at low.
+
+
+Nonlinear Dynamics II:
+--------------------------------------------------
+Conditions for chaos in continuous time systems vs discrete time systems:
+	(a) time proceeds smoothly, "flows", modelled by differential equations, and (b) time proceeds in clicks, "maps", difference equations
+
+where a difference equation / map says x_{n} -> | f | -> x_{n+1}, 
+	- for example, the logistic map: x_{n+1} = R * x_{n} * (1 - x_{n})
+	- given the state x at time n, we know the state at time n+1
+
+where a differential equation says x -> | f | -> dx / dt
+	- for example, Newton's 2nd law m * d^{2}x / dt^{2} = - x
+	- tells us the direction in which that system will evolve
+
+Ordinary differential equation (ODE) solvers like Euler, Runge-Kutta, etc.
+
+Numerical methods can cause distortions, bifrucations, etc. Try changing the time stamp, the method, the arithmetic.
+	- Solvers can use adaptive time steps, in which cases, you can't understand the velocity.
+	- Small approximations to a calculation may push you away from an attractor, but:
+			Lemma: every noise-added trajectory of a chaotic attractor is shadowed by a true chaotic attractor
+
+Reality: rarely do you know what all the state variables, or be able to meaure all of them, without changing the underlying dynamics.
+
+Delay coordinate embedding: "reinflate" the projection to get a topologically identical copy of the original data.
+	- Reconstruction space: have measurements of f(x) = w, and embed it against delayed version of itself: (w(t), w(t + tau), w(t + 2*tau))
+	- Takens theorem: for the right tau and enough dimensions, the embedded dynamics are diffeomorphic to the original state-space dynamics
+
+Diffeomorphic: mapping from one to the other is differentiable, and is inverse differentiable. This means, they have qualitatively the same shape and can deform one into the other and have the same dynamical invariants. Caveat: we need enough data, sometimes 10^{d}. And we need evenly sampled data, though ...
+
+Interspike interval embedding: for data which is not evenly measured in time, generated by spikes, we can consider the time between spikes.
+
+Filtering noise:
+	- Linear filtering based on frequency is a bad idea if the system is chaotic (since chaotic frequencies are distributed broadly across)
+	- If you have a model of where the system came from and where it is going, you can filter the noise using stable and unstable manifold geometry as a chaotic attractor.
+
+
+How religious belief, practice, and identity interact with and shape interpersonal relationships I
+--------------------------------------------------
+Did members of the lowest cast migrate from one village to another?
+...
+
+
+Nonlinear Dynamics I
+--------------------------------------------------
+Difference vs differential and the logistic map: dynamics converge to the stable fixed point attractor at zero
+	- Logistic map may show initial transient behavior, and only has one attractor
+	- Stable (perturbations shink) vs unstable (perturbations grow)
+
+Cobweb diagram / return map / correlation plot: (x_{n}, x{n+1})
+	- Crossing of two maps is the fixed point, location of box diagram where we plug the results of one map into another map
+
+For the logistic map, increases of R (parameter) can change qualitatively the dynamics of the system -- similar to "bifurcation"
+
+Bifurcation diagram: plot of the location of fixed points as a function of parameter R values
+	- Period doubling cascade to chaos, which appears as a "pitchfork bifurcation"
+	- Feigenbaum constant: ratio of distance in parameter space between bifurcations approaches the Feigenbaum constant -- which occurs across all one-dimensional maps!
+	- Veils: hitting periodic orbits
+
+Fractal: where there exist infinite number of copies of itself
+
+
+

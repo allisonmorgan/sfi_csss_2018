@@ -1,0 +1,121 @@
+Day 6 - CSSS
+6/18/2018
+=============
+
+Crash Course in Information Theory
+--------------------------------------------------
+Information theory subfield of electrical and computer engineering, commonly used across complex systems.
+	- Machinery to make statements about probability distributions and relations among them, including memory and non-linear correlations.
+
+Suppose a function H[X] that measures the amount of uncertainty associated with outcomes of the random variable X.
+	- Where (a) the uncertainty function is maximized when the distribution of X is uniform, (b) is continuous, (c) independent of the way we might group probabilities
+
+Entropy of a single variable: 
+	H[X] = - sum_{x in X} Pr(x) * log_{2}(pr(x))
+		 =  average (expected value) of the surprise -- the more surprise, the more informative the relationship is.
+
+In other words, the greater H[X], the more informative, on average, a measurement of X is.
+
+Example: guessing games <---> entropy
+
+Coding: mapping from a set of symbols to another set of symbols.
+	Strategy: use short code words for more common occurrences of X
+	* Unambiguously decodable - clear to understand where symbols beginning and end -- called "instantaneous code".
+
+Shannon's noiseless source coding theorem:
+	"Average number of bits in optimal binary code for X is between H[X] and H[X] + 1"
+
+Joint entropy: H[X, Y] = - sum_{x} sum_{y} P(x, y) * log_{2}(Pr(x, y))
+Conditional entropy: H[X | Y] = -sum{x} sum_{y} Pr(x, y) * log_{2}(Pr(x | y))
+
+Mutual information: I[X ; Y] = H[X] - H[X | Y] 
+	* when H[X | Y] is different from H[X] alone, we say Y is encoding some information about outcome X.
+	* and when I[X ; Y] = 0, we say X carries no information about Y
+
+Estimating entropies: Pr(x_{i}) = c_{i} / sum_{j} c_{j} can be estimates, but this will always lead to a biased under-estimate of H[X].
+
+Relative entropy / Kullback-Leibler distance (divergence) between two distributions p(x) and q(x): 
+	D(p || q) = sum_{x} p(x) * log_{2}(p(x) / q(x)) 
+where p(x) is the true distribution, and q(x) is estimate of the distribution.
+	- Not symmetric. Measures the "coding mismatch" or "entropic distance" between p and q.
+
+
+Networks I
+--------------------------------------------------
+(a) an approach, (b) mathematical representation, (c) provide structure to complexity ...
+	individuals / components <-------> systems / population	
+
+Networks: What is a vertex? When are two vertices connected?
+	* Multiple ways to define a network based on different relationships between vertices.
+
+Types: (i) information networks, (ii) social networks, (iii) transportation, (iv) biological
+	* weighted edges / nodes, directed, self-loops, multi-edge
+
+Representation: labeled nodes, with representation as a graph and / or an adjacency matrix / list.
+
+Directed (acyclic) graphs: 
+	(acyclic) citation networks, foodwebs, epidemiology, 
+	(not necessarily acyclic) WWW, friendship, flows of goods, economic exchange
+
+Bipartite: where no within-type edges -> often, projected the data onto a single network (via a one-mode projection)
+
+* How do choices of network representation, shape the conclusions one might reach?
+
+Ideally want to answer "What processes shape these networks?" and "How can we tell?", but we often start with "What does the network look like?"
+	* "What does local-structure look like? What does large-scale structure look like? How is the structure constrain(ed by) function?"
+
+Degree distribution: probabilities of getting a node with degree greater than or equal to k.
+	* Lorenz curve for representing inequality: e.g. fraction of population with wealth vs the fraction of the total population
+	* Few networks exhibit perfect power-law degree distributions. Perhaps a network exhibits power law behavior within certain regions.
+
+
+Agent Based Modeling
+--------------------------------------------------
+Versus "equation based modeling" -- e.g. dx / dt = alpha * x - beta * x * y, and dy / dt = delta * x * y - gamma * y (prey / predator species)
+	* Limits of equation based modeling: (1) spatial structure, (2) heterogenous agents, (3) contingent rules
+
+Common elements of ABMs: (1) simple rules that agents follow, (2) external information, (3) spatial structure, (4) agent interactions, (5) discrete time steps, (6) evolution of agent conditions and preferences
+
+With growing complexity: (a) emergent structure from simple rules, (b) tipping points, and (b) hysteresis
+
+Example: "Schelling" Model of Segregation, Flocking Model ("Viscek")
+
+"As simple as possible but not simpler"
+
+Inference: deduction, induction, and abduction
+	(i)   [deduction] men ('a') -> mortal ('b'), Socrates ('c') = man ('a'), therefore Socrates ('c') -> mortal ('a')
+	(ii)  [induction] we've only seen white swans, so therefore all swans are white
+	(iii) [abduction] "inference to the best explanation." given 'a + ? = c', find a sensible explanation 'b' such that 'c' follows from 'a'.
+
+Abduction & ABMs: agent based modeling helps find 'b', such that 'a' follows from 'c'. (not unlike other types of modelling)
+
+Notes: Reinforcement learning / Q-learning? versus ABMs
+
+
+Surprise, Transience, and Human Creativity
+--------------------------------------------------
+"Where do new things come from, and what do we do when we get them?"
+
+Perception & reality, top-down conflicts, extreme version - "What causess us to revise out high-level models of the world?", "How do we respond to 'bad input'?"
+
+Optimal questions for solving twenty questions ("Huffman encoding").
+	KL Divergence: "How many extra questions would you need to solve 20 questions?"
+
+"Innovation": 
+	* "Lego-brick" Creativity: combine A & B, which have never been combined before
+	* "Novelty in Science": quantifying development, 
+		(1) using a "bag of words" model over text, probability distribution over words
+		(2) using topic modeling and KL divergence as a proxy for pattern making / pattern breaking ("novelty" - given some text, how surprising is it given past or future context)
+
+Transcience (surprise given future) vs Novelty (surprise given past):
+	- First law of novelty: "What is new, is quickly forgotten.", "What hasn't been seen before won't be seen much again."
+	- Second law of novelty: "... science honors the new."
+		* Resonance: novelty minus transcience. Highly cited papers, continue to accrue citations. (e.g. Benjamin Franklin) 
+
+Note: "Surfing Uncertainty: Prediction, Action, and the Embodied Mind" -- Andy Clark
+	(1) How are citations mesured? At what point in time?
+	(2) What's does proximity to the origin mean?
+	(3) Diversity. Can you extend this method to think about the successful combination of types of people?
+
+How do ideas enter (and leave) the system?
+

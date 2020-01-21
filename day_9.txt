@@ -1,0 +1,96 @@
+Day 9 - CSSS
+6/21/2018
+=============
+
+Community Detection on Networks II
+--------------------------------------------------
+Testing inferred communities versus ground truth:
+	* "Cluster matching": compute difference between inferred clusters (c^{*}) and ground truth clusters (c)
+		
+		Use F1 score = count of false positives, false negatives, true positives 
+					 = 2 * precision * recall / (precision + recall)
+		
+		Use normalized mutual information = "how much does knowing one cluster tell you about the others?"
+
+		Use pair counting = cosine-similarity = sin(A, B) = cos(theta) = A * B / (||A|| * ||B||)
+
+Unsupervised machine learning: when you don't know the true labels for the communities
+	* Predictive performance: if a model is 'good' if it's able to predict the existence of the network's links
+
+		Use cross-validation: e.g. hide 20% of the edges, fit the parameters on the 80%, calculate the probability of edges on the 20%
+			AUC = area under the ROC curve = 1 - (# of bad)/(# edges * # non-edges)
+			* Can be used to select the ideal number of clusters, by maximizing AUC
+
+		Use minimum description length: e.g. maximize the minimum description length
+
+Process parameters:
+	(1) normalize vectors representing the clusters a node belongs to
+	(2) form communities by taking the max for each node, or threshold the membership
+
+
+Stochastic Biological Systems
+--------------------------------------------------
+RECAP: "birth-death process". in the limit of large x, find the master equation: a partial difference - differential equation. We then expanded the equation using Taylor series expansion, to resolve that the solution is a Poisson distribution ...
+
+d_{t} p(x, t) = k_{b} * [p(x-1, t) - p(x, t)] + k_{d} * [(x + 1) * p(x + 1, t) - x * p(x, t)]
+
+	(I)   sum_{x = 0, ... } z^{x} * p(x - 1, t) = z * sum_{y = -1, ... } z^{y} * p(y, t) = z * g(z, t)
+	(II)  sum_{x} z^{x} * p(x, t) = g(z, t)
+	(III) sum_{x} z^{x} * (x + 1) * p(x + 1, t) = sum_{y} z^{y - 1} * y * P(y, t) = dg(z, t) / dz
+	(IV)  sum_{x} z^{x} * x * p(x, t) = z * sum_{x} x * z^{x-1} * p(x, t) = z * dg(z, t)/ dz
+
+Master equation for g is:
+	dg(z, t) / dt = k_{b} [z * g - g] + k_{d} [dg / dz - z * (dg / dz)]
+				  = (z - 1) * [k_{b} * g - k_{d} * dg / dz]					## method of characteristics
+
+@ t = 0, p(x, 0) = delta_{x, 0} 											## Kronecker delta
+		 g(z, 0) = 1  														## since p(x, 0) = 1 only when t = 0
+@ z = 1, g(z, t) = 1														## since the p(x, t) is normalized
+
+Steady-state solution: when dg(z, t) / dt = 0
+	g^{*}(z) = e^{(k_{b} / k_{d}) * (z - 1)} 								## Poission distribution
+	p^{*}(x) = e^{-(k_{b} / k_{d}) * x} / x!								
+		where standard deviation is sqrt(\lambda^{*}): (sigma / mu) = (1 / sqrt(lambda))
+
+	g(z, t) = e^{lambda(t) * (z - 1)}										## Poission distribution
+		where lambda(t) = (k_{b} / k_{d}) * (1 - e^{-k_{d} * t})
+
+Sampling from a time series x(t): need samples drawn a series which are "memory-less".
+	To determine the length of memory of the system, consider the autocorrelation function:
+		< (x(t + tau) - <x(t+ tau)>) (x(t) - <x(t)>) > ~ exp(-k_{d} * tau)
+	where the characteristic time scale, tau is 1 / k^{d}.
+
+FIRST PASSAGE TIMES: consider just the birth process, with linear growth k_{b}. where the stochastic process is monotomically increasing.
+	* Only one point at which the process crosses the population threshold. (For other non-monotomically increases processes, we consider the "first" passage time where the threshold is passed just once.)
+	
+	* Question: Given a process, how do you find the distribution of first passage times? p(x, t) -> p(tau, theta = threshold)
+		integral_{0}^{tau} p_{theta}(tau) * delta tau = fraction of cases in which the threshold 
+														has been crossed before tau
+		p_{theta}(tau) = integral_{0}^{tau}[sum_{0} p(x, t)]
+
+Innovations in Biological Evolution I
+--------------------------------------------------
+* Markov Chain Monte Carlo methods can help explore and sample a space of metabolic genotypes
+	- perform random walks in the genotype space
+	- "flux balance analysis": where each step must preserve phenotype and the number of reactions
+
+Two (qualitative) fundamental features of metabolic genotype space: (1) vast, phenotype-preserving genotype networks that extend far through genotype space, and (2) phenotypically diverse neighborhoods
+	Necessary to explore novel phenotypes, while preserving old phenotypes
+
+* Regulatory networks: "gene regulatory circuits create gene expression patterns that are the basis of many adaptations and innovations"
+
+Computational tools: http://rna.tbi.univie.ac.at/
+
+* Origins of genotype network: evolvable and adaptable technology. limits to the complexity of systems, in the case of adaptation.
+
+"Arrival of the Fittest: Solving Evolution's Greatest Puzzle" - Andreas Wagner
+
+The Roles, Function and Impacts of Humans in Complex Ecological Networks
+--------------------------------------------------
+
+
+NOTES: 
+	- Specialist vs generalist: by degree distribution of species that eat other species
+
+
+

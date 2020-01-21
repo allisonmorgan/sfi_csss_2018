@@ -1,0 +1,27 @@
+Day 10 - CSSS
+6/22/2018
+=============
+
+Complex Science of Cybersecurity
+--------------------------------------------------
+* Malicious behavior emerges spontaneously in complex networks with self-interested actors and adaptation
+
+* Interactions between many actors which have been optimized by different developers
+
+Complex systems perspective on the problem: 
+	(a) arms race with adversaries, (b) inadvertant evolution, (c) interactions lead to unanticipated behaviors, (d) network effects, (e) mixed incentives
+
+... and on the solution:
+	(a) focus on dynamics, (b) network science, (c) scaling behavior, (d) game theory, (e) evolution / adaptation / competition
+
+Biology + cyber security:
+	From compouter science -- "myth of perfection"
+	From biology -- constantly coping with adversaries, and developing highly evolved defenses
+		where they can (i) automatically detect and respond to attacks, (ii) have learning and memory, (iii) have defense in depth, are (iv) diverse, and have (v) defensive complexity
+
+Engineered diversity: (a) CRISPR inspired signature generation, (b) complex logic circuits
+
+
+Applied Complexity at SFI
+--------------------------------------------------
+
